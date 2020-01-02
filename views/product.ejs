@@ -1,0 +1,20 @@
+<% include ./partials/header %>
+<div class="ui main text container segment">
+	<div class="ui huge header"><%= product.productName %>
+		<a class="ui blue button" href="/home" data-tooltip="Home." data-position="right center" data-inverted=""><i class="long arrow alternate left icon"></i></a>
+		<form method="POST" action="/product/<%= product._id %>?_method=DELETE">
+			<button id="deleteBtn" class="ui red button" data-tooltip="Delete." data-position="bottom left" data-inverted=""><i class="archive icon"></i></button>
+			<a href="/product/<%= product._id %>/edit" id="deleteBtn" class="ui yellow button" data-tooltip="Edit." data-position="bottom left" data-inverted=""><i class="pencil alternate icon"></i></a>
+		</form>
+	</div>
+	<div class="ui top attached">
+		<div class="item">
+			<div class="content">
+				<span><h5>Seller - <%= product.seller %></h5></span>
+				<span><h5>Manufacturer - <%= product.manufacturer %></h5></span>
+				<span><h5>Discount - <%= product.discount %>%</h5></span>
+			</div>
+		</div>
+	</div>
+</div>
+<% include ./partials/footer %>

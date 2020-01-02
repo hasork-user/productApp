@@ -1,0 +1,45 @@
+<% include ./partials/header %><br>
+<div class="ui main text container">
+	<div class="ui middle aligned center grid">
+		<div class="ui inverted segment">
+			<form class="ui inverted form" method="POST" action="/addProduct">
+				<label id="lbl">Product Name</label>
+				<input type="text" name="product[productName]" required="true">
+				<label id="lbl">Product Image</label>
+				<input type="text" name="product[image]" required="true">
+				<label id="lbl">Product Description</label>
+				<textarea rows="5" cols="50" name="product[description]" required="true"></textarea>
+				<label id="lbl">Rating</label>
+				<input id="rating" type="text" name="product[rating]" required="true" onkeyup="validate(this.value)">
+				<label id="lbl">Price</label>
+				<input type="text" name="product[price]" required="true">
+				<label id="lbl">Product Seller</label>
+				<input type="text" name="product[seller]">
+				<label id="lbl">Product Manufacturer</label>
+				<input type="text" name="product[manufacturer]" required="true">
+				<label id="lbl">Product Discount</label>
+				<input id="discount" type="text" name="product[discount]" onkeyup="validateDis(this.value)">
+				<button class="ui green button">Add Product</button>
+			</form>
+		</div>
+	</div>
+	
+</div>
+<script type="text/javascript">
+	function validate(evt){
+		if(evt>5)
+		{
+			alert("Rating should be between 0-5");
+			document.getElementById("rating").value = "";
+		}
+	}
+	function validateDis(evt){
+		if(evt>100)
+		{
+			alert("Discount should be between 0-100");
+			document.getElementById("discount").value = "";
+		}
+	}
+</script>
+
+<% include ./partials/footer %>

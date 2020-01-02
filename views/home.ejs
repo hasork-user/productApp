@@ -1,0 +1,28 @@
+<% include ./partials/header %>
+<div class="ui main text container">
+	<div class="ui top attached segment">
+		<div class="ui divided items">
+			<% product.forEach(function(products){ %>
+			<div class="item">
+				<div class="ui small image">
+					<img src="<%= products.image %>">
+				</div>
+				<div class="content">
+					<a href="/product/<%= products._id %>" class="header"><%= products.productName %></a>
+					<div class="meta">
+						<span class="price">₹<%= products.price %></span>-
+						<div class="ui star rating" data-rating="<%= Math.floor(products.rating) %>" data-max-rating="5" data-tooltip="<%= products.rating %>" data-position="right center" data-inverted=""></div>
+					</div>
+					<div class="description">
+						<p><%= products.description.substring(0,100) %>...<a href="/product/<%= products._id %>">Read more</a></p>
+					</div>
+				</div>
+			</div>
+			<% }); %>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$('.ui.rating').rating('disable',{initialRating: 3,maxRating: 5});
+</script>
+<% include ./partials/footer %>

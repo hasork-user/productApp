@@ -1,0 +1,32 @@
+#deleteBtn{
+	float: right;
+	margin-top: 40px;
+	padding-right: 13px;
+}
+
+.ui.inverted.segment{
+	background-color: #bfb3ff;
+}
+
+#lbl{
+	color: black;
+	font-weight: bold;
+}
+
+.ui.green.button{
+	margin-left: 40%;
+	margin-top: 20px;
+}
+
+a.ui.blue.button{
+	float: right;
+	padding-right: 13px;
+}
+
+img{
+	display: block;
+  	max-width:150px;
+  	max-height:211.49px;
+  	width: auto;
+  	height: auto;
+}
